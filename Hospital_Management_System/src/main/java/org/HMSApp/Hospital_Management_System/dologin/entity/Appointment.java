@@ -28,5 +28,7 @@ public class Appointment {
 	private String age;
 	
 	private String symtomps;
+	
+	private String number;
 
 }
