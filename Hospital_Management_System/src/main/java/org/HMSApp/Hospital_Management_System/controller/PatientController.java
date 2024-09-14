@@ -73,4 +73,12 @@ public class PatientController {
 		 
 		
 	 }
-}
+     
+     @GetMapping("/{id}")
+     public ResponseEntity<Patient>getPatientById(@PathVariable long id) throws AttributeNotFoundException {
+    	Patient patient=patientRepository.findById(id).orElseThrow(()->new AttributeNotFoundException("Patient not found with id"+id));
+    	
+    	return ResponseEntity.ok(patient);
+     }
+     
+} 
